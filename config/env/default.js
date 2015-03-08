@@ -13,3 +13,5 @@ module.exports = {
 	sessionSecret: 'MEAN',
 	sessionCollection: 'sessions'
 };
+
+
