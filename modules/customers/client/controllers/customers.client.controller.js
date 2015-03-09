@@ -45,18 +45,19 @@ meanjsApp.controller('CustomersController', ['$scope', '$stateParams', '$locatio
 		    var modalInstance = $modal.open({
 		    	//this template url raltes to the client routes found in customers/config edit customer
 			    templateUrl: 'modules/customers/views/edit-customer.client.view.html',
-			    controller: function($scope, $modalInstance, customer){
-			    	$scope.customer = customer;
+			    controller: function($scope, $modalInstance, acustomer){
+			    	$scope.theCustomer = {};
 
-			    	$scope.ok = function () {
-			    		if (updateCustomerForm.$valid) {
-							$modalInstance.close($scope.customerId);
-						}
-				  	};
+					$scope.theCustomer = angular.copy(aCustomer);
 
-				  	$scope.cancel = function () {
-				    	$modalInstance.dismiss('cancel');
-				  	};
+
+					$scope.ok = function () {
+						$modalInstance.close();
+					};
+
+					$scope.cancel = function () {
+						$modalInstance.dismiss('cancel');
+					};
 			    },
 			    size: size,
 			    resolve: {
@@ -102,31 +103,28 @@ meanjsApp.controller('CustomersCreateController', ['$scope', 'Customers', 'Notif
 	function($scope, Customers, Notify) {
 		// Create new Customer
 		this.create = function() {
-			// Create new Customer object
-			var customer = new Customers ({
-				firstName: this.firstName,
+            // Create new Customer object
+            var customer = new Customers ({
+                firstName: this.firstName,
                 surname: this.surname,
-                street1: this.street1,
-                street2: this.street2,
                 suburb: this.suburb,
-                postcode: this.postcode,
-                state: this.state,
                 country: this.country,
                 industry: this.industry,
                 email: this.email,
                 phone: this.phone,
                 referred: this.referred,
-                channel: this.channel,
-                type: this.type
-			});
+                channel: this.channel
+            });
 
-			// Redirect after save
-			customer.$save(function(response) {
-				Notify.sendMsg('NewCustomer', {'id': response._id});
-			}, function(errorResponse) {
-				$scope.error = errorResponse.data.message;
-			});
-		};
+            // Redirect after save
+            customer.$save(function(response) {
+
+                Notify.sendMsg('NewCustomer', {'id': response._id});
+
+            }, function(errorResponse) {
+                $scope.error = errorResponse.data.message;
+            });
+        };
 
 	}
 ]);

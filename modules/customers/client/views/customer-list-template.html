@@ -22,6 +22,6 @@
         </a>
     </div>
 </div>
-<div class="alert alert-warning text-center" data-ng-hide="!customers.$resolved || customers.length">
-	No Customers yet, why don't you <a href="/#!/customers/create">create one</a>?
+<div class="alert alert-warning text-center" data-ng-hide="!customersCtrl.customers.$resolved || customersCtrl.customers.length">
+    No Customers yet, why don't you <a ng-click="customersCtrl.modalCreate('lg')">create one</a>?
 </div>
