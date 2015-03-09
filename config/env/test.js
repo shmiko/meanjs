@@ -2,7 +2,7 @@
 
 module.exports = {
 	db: 'mongodb://localhost/mean-test',
-	port: 3001,
+	port: 4001,
 	app: {
 		title: 'TripStomp - Test Environment'
 	},

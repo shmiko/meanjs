@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-	//db: 'mongodb://localhost/mean-dev',
-	db: 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit',
+	db: 'mongodb://localhost/mean-dev',
+	//db: 'mongodb://tripstomp:waxnepke@ds031641.mongolab.com:31641/calmapit',
 	app: {
 		title: 'DEV TripStomp - UnRavel Travel'
 	},

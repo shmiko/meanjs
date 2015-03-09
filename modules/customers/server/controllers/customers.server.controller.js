@@ -73,7 +73,9 @@ exports.delete = function(req, res) {
 /**
  * List of Customers
  */
-exports.list = function(req, res) { Customer.find().sort('-created').populate('user', 'displayName').exec(function(err, customers) {
+exports.list = function(req, res) { Customer.find().exec(function(err, customers) {
+
+//exports.list = function(req, res) { Customer.find().sort('-created').populate('user', 'displayName').exec(function(err, customers) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)
@@ -94,3 +96,6 @@ exports.customerByID = function(req, res, next, id) { Customer.findById(id).popu
 		next();
 	});
 };
+
+
+

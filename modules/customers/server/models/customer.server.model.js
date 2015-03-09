@@ -73,7 +73,7 @@ var CustomerSchema = new Schema({
     },
     referred: {
         type: Boolean,
-        required: 'Please fill your referred'
+        //required: 'Please fill your referred'
     },
     channel: {
         type: String,

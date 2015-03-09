@@ -158,9 +158,9 @@ module.exports = function (grunt) {
 		'node-inspector': {
 			custom: {
 				options: {
-					'web-port': 1337,
+					'web-port': 2337,
 					'web-host': 'localhost',
-					'debug-port': 5858,
+					'debug-port': 6858,
 					'save-live-edit': true,
 					'no-preload': true,
 					'stack-trace-limit': 50,
