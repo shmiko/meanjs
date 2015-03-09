@@ -1,9 +1,9 @@
 'use strict';
 
-var tripstompApp = angular.module('customers');
+var meanjsApp = angular.module('customers');
 
 // Customers controller
-tripstompApp.controller('CustomersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Customers', '$modal', '$log',
+meanjsApp.controller('CustomersController', ['$scope', '$stateParams', '$location', 'Authentication', 'Customers', '$modal', '$log',
 	function($scope, $stateParams, $location, Authentication, Customers, $modal, $log) {
 		
 		this.authentication = Authentication;
@@ -98,7 +98,7 @@ tripstompApp.controller('CustomersController', ['$scope', '$stateParams', '$loca
 	}
 ]);
 
-tripstompApp.controller('CustomersCreateController', ['$scope', 'Customers', 'Notify',
+meanjsApp.controller('CustomersCreateController', ['$scope', 'Customers', 'Notify',
 	function($scope, Customers, Notify) {
 		// Create new Customer
 		this.create = function() {
@@ -131,7 +131,7 @@ tripstompApp.controller('CustomersCreateController', ['$scope', 'Customers', 'No
 	}
 ]);
 
-tripstompApp.controller('CustomersUpdateController', ['$scope', 'Customers',
+meanjsApp.controller('CustomersUpdateController', ['$scope', 'Customers',
 	function($scope, Customers) {
 
 		$scope.channelOptions = [
@@ -153,7 +153,7 @@ tripstompApp.controller('CustomersUpdateController', ['$scope', 'Customers',
 	}
 ]);
 
-tripstompApp.directive('customerList', ['Customers', 'Notify', function(Customers, Notify){
+meanjsApp.directive('customerList', ['Customers', 'Notify', function(Customers, Notify){
 	return {
 		restrict: 'E',
 		transclude: true,
