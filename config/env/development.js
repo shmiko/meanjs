@@ -3,7 +3,7 @@
 module.exports = {
 	db: 'mongodb://localhost/meanestjs',
 	app: {
-		title: 'DEV TripStomp - UnRavel Travel'
+		title: 'TripStomp - UnRavel Travel'
 	},
 	facebook: {
 		clientID: process.env.FACEBOOK_ID || 'APP_ID',
