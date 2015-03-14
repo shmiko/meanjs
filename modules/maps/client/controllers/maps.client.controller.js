@@ -1,8 +1,8 @@
 'use strict';
 
 // Maps controller
-angular.module('maps').controller('MapsController', ['$scope', '$stateParams', '$location', 'Authentication', 'Maps',
-	function($scope, $stateParams, $location, Authentication, Maps ) {
+angular.module('ngMap').controller('MapsController', ['$scope', '$stateParams', '$location', 'Authentication', 'ngMap',
+	function($scope, $stateParams, $location, Authentication, ngMap ) {
 		$scope.authentication = Authentication;
 
 		// Create new Map

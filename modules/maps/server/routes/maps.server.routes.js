@@ -9,6 +9,10 @@ module.exports = function(app) {
 		.get(maps.list).all(mapsPolicy.isAllowed)
 		.post(maps.create);
 
+	app.route('/api/maps/simple-maps').all()
+		.get(maps.simple-maps).all(mapsPolicy.isAllowed)
+		.post(maps.create);
+
 	app.route('/api/maps/:mapId').all(mapsPolicy.isAllowed)
 		.get(maps.read)
 		.put(maps.update)
